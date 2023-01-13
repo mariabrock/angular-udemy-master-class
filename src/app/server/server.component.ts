@@ -9,9 +9,15 @@ export class ServerComponent implements OnInit {
 
   serverId: number = 10;
   serverStatus: string = 'offline';
+  isString: boolean = false;
+  username: string = 'Username';
 
   getServerStatus() {
     return this.serverStatus;
+  }
+
+  onReset() {
+    this.username = '';
   }
 
   constructor() { }

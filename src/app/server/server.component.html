@@ -1,1 +1,14 @@
 <p>Server with id: {{ serverId }} is {{ getServerStatus() }}.</p>
+
+
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="username">
+
+<p>{{ username }}</p>
+
+<button
+class="btn btn-accent"
+[disabled]="!isString"
+(click)="onReset()">Reset</button>
