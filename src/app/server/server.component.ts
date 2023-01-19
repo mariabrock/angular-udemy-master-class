@@ -9,8 +9,7 @@ export class ServerComponent implements OnInit {
 
   serverId: number = 10;
   serverStatus: string = 'offline';
-  isString: boolean = false;
-  username: string = 'Username';
+  username: string = 'username';
 
   getServerStatus() {
     return this.serverStatus;
@@ -20,7 +19,8 @@ export class ServerComponent implements OnInit {
     this.username = '';
   }
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
