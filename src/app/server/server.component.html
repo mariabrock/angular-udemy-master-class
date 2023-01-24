@@ -1,1 +1,17 @@
 <p>Server with id: {{ serverId }} is {{ getServerStatus() }}.</p>
+
+<hr>
+
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="username">
+
+<p>{{ username }}</p>
+
+<button
+class="btn btn-warning"
+[disabled]="username == ''"
+(click)="onReset()">Reset</button>
+
+<!--check to see if username has a length = 0?-->
