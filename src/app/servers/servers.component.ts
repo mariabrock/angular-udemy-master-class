@@ -13,6 +13,7 @@ export class ServersComponent implements OnInit {
   servers = ['Testeserver', 'Testserver 2'];
   details: boolean = false;
   clickCount = 0 ;
+  arrClickCount = [];
 
 
   constructor() {
@@ -38,6 +39,8 @@ export class ServersComponent implements OnInit {
   toggle(click) {
     this.details = !this.details;
     this.clickCount++;
+    this.arrClickCount.push(this.clickCount);
+    console.log(this.arrClickCount);
   }
 
 }
