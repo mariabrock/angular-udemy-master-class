@@ -46,10 +46,9 @@
     reserve power. Shield effectiveness has been reduced 12 percent. We have covered the area in a spherical pattern
     which a ship without warp drive could cross in the given time.
   </p>
-
-
 </div>
-<p>{{ clickCount }}</p>
+
+<div *ngFor="let click of clicks">{{ click }}</div>
 <hr>
 
 <app-server *ngFor="let server of servers"></app-server>
