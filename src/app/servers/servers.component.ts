@@ -40,7 +40,18 @@ export class ServersComponent implements OnInit {
     this.details = !this.details;
     this.clickCount++;
     this.clicks.push(this.clickCount);
-    console.log(this.clicks);
+    console.log(this.clicks); //here I've gotten the array with all numbers to print out in console
   }
 
+  getColor() {
+    const index = this.clicks;
+    console.log(index.length-1); //here I have printed out the index of each number
+
+    // if (index.length-1 >= 4) {
+    //   return "#FFFFFF";
+    // } else {
+    //   return "#4682B4";
+    // }
+  }
+  // [ngStyle]="{backgroundColor: getColor()}"
 }

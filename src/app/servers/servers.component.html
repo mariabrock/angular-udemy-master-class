@@ -48,7 +48,9 @@
   </p>
 </div>
 
-<div *ngFor="let click of clicks">{{ click }}</div>
+<div *ngFor="let click of clicks">
+  <p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{ blue: index.length-1 >= 4}">{{ click }}</p>
+</div>
 <hr>
 
 <app-server *ngFor="let server of servers"></app-server>
