@@ -14,6 +14,7 @@ export class ServersComponent implements OnInit {
   details: boolean = false;
   clickCount = 0 ;
   clicks: Array<any> = [];
+  limit = 4;
 
 
   constructor() {
@@ -36,22 +37,21 @@ export class ServersComponent implements OnInit {
     console.log(event)
   }
 
-  toggle(click) {
+  toggle(clickCount) {
     this.details = !this.details;
     this.clickCount++;
     this.clicks.push(this.clickCount);
     console.log(this.clicks); //here I've gotten the array with all numbers to print out in console
   }
 
-  getColor() {
+  getColor(i: number):  string {
     const index = this.clicks;
     console.log(index.length-1); //here I have printed out the index of each number
-
-    // if (index.length-1 >= 4) {
-    //   return "#FFFFFF";
-    // } else {
-    //   return "#4682B4";
-    // }
+    if(i >= this.limit) {
+      return 'steelblue';
+    }else{
+      return 'white';
+    }
   }
-  // [ngStyle]="{backgroundColor: getColor()}"
 }
+

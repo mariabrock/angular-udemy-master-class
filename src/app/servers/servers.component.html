@@ -38,7 +38,6 @@
   class="btn btn-secondary"
   (click)="toggle(clickCount)">Display Details</button>
 <div *ngIf="details">
-  <p>A cheeseburger is more than just a sandwich, it is a wish fulfilled.</p>
   <p>
     Sensors indicate human life forms 30 meters below the planet's surface.
     Stellar flares are increasing in magnitude and frequency. Set course for Rhomboid Dronegar 006, warp seven.
@@ -48,8 +47,8 @@
   </p>
 </div>
 
-<div *ngFor="let click of clicks">
-  <p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{ blue: index.length-1 >= 4}">{{ click }}</p>
+<div *ngFor="let click of clicks; index as i">
+  <p [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{ 'blue': i >= limit}">{{ click }}</p>
 </div>
 <hr>
 
