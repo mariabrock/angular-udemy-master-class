@@ -1,0 +1,11 @@
+<div class="card text-center w-50">
+  <div class="card-body">
+    <h5 class="card-title">Welcome!</h5>
+    <p class="card-text">Please Login</p>
+    <input type="text" placeholder="Username" [(ngModel)]="username">
+    <button href="#" class="btn btn-primary" [disabled]="username == ''" (click)="onCreateUser()">Submit</button>
+    <br>
+
+  </div>
+  {{ userCreationStatus }}
+</div>
