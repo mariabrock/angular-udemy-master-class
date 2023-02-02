@@ -1,10 +1,19 @@
-<div class="card text-center w-50">
+<div class="card w-50 mx-auto">
   <div class="card-body">
-    <h5 class="card-title">Welcome!</h5>
-    <p class="card-text">Please Login</p>
-    <input type="text" placeholder="Username" [(ngModel)]="username">
-    <button href="#" class="btn btn-primary" [disabled]="username == ''" (click)="onCreateUser()">Submit</button>
-    <br>
+    <form class="">
+      <div class="d-flex align-items-start flex-column mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username">
+        <div id="usernameHelp" class="form-text">Must be 8-10 characters.</div>
+      </div>
+      <div class="d-flex align-items-start flex-column mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password">
+      </div>
+      <div class="d-flex align-items-end flex-column mb-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
 
   </div>
   {{ userCreationStatus }}
