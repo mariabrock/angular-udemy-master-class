@@ -1,20 +1,29 @@
-<div class="card w-50 mx-auto">
+<div class="card w-75 mx-auto">
   <div class="card-body">
-    <form class="">
+    <div>
       <div class="d-flex align-items-start flex-column mb-3">
         <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username">
-        <div id="usernameHelp" class="form-text">Must be 8-10 characters.</div>
+        <input [(ngModel)]="username" type="text" class="form-control" id="username">
       </div>
       <div class="d-flex align-items-start flex-column mb-3">
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password">
       </div>
-      <div class="d-flex align-items-end flex-column mb-3">
-        <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="d-flex flex-row gap-3 align-items-end flex-column mb-3">
+        <button
+          [disabled]="username == ''"
+          (click)="onCreateUser()"
+          type="submit" class="btn btn-primary">Submit</button>
+
+        <button
+        class="btn btn-warning"
+        (click)="onReset()">Reset</button>
       </div>
-    </form>
+    </div>
 
   </div>
+
+  {{ username}}
+  <br>
   {{ userCreationStatus }}
 </div>

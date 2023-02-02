@@ -9,7 +9,7 @@ export class DemoOneComponent implements OnInit {
 
   username: string = '';
   createUser: boolean = false;
-  userCreationStatus: string = 'No server was created!';
+  userCreationStatus: string = 'No user was created!';
   users: any = [];
 
   constructor() { }
@@ -20,7 +20,12 @@ export class DemoOneComponent implements OnInit {
   onCreateUser() {
     this.createUser = true;
     this.users.push(this.username);
-    this.userCreationStatus = 'User was created! Name is' +  this.username;
+    this.userCreationStatus = 'User was created! Name is ' +  this.username;
+  }
+
+  onReset() {
+    this.username = '';
+    this.userCreationStatus = 'No user was created!';
   }
 
 }
