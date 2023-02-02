@@ -1,5 +1,5 @@
 <div class="card w-75 mx-auto">
-  <div class="card-body">
+  <div class="card-body gap-3">
     <div>
       <div class="d-flex align-items-start flex-column mb-3">
         <label for="username" class="form-label">Username</label>
@@ -9,7 +9,7 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password">
       </div>
-      <div class="d-flex flex-row gap-3 align-items-end flex-column mb-3">
+      <div class="d-flex flex-row gap-3 mb-3">
         <button
           [disabled]="username == ''"
           (click)="onCreateUser()"
@@ -26,4 +26,27 @@
   {{ username}}
   <br>
   {{ userCreationStatus }}
+</div>
+
+<div>
+  <div class="card w-75 mx-auto">
+    <div class="card-body gap-3">
+  <button
+    class="btn btn-secondary"
+    (click)="toggle(clickCount)">Display Details</button>
+  <div *ngIf="details">
+    <p>
+      Sensors indicate human life forms 30 meters below the planet's surface.
+      Stellar flares are increasing in magnitude and frequency. Set course for Rhomboid Dronegar 006, warp seven.
+      There's no evidence of an advanced communication network. Total guidance system failure, with less than 24 hours'
+      reserve power. Shield effectiveness has been reduced 12 percent. We have covered the area in a spherical pattern
+      which a ship without warp drive could cross in the given time.
+    </p>
+  </div>
+
+  <div *ngFor="let click of clicks; index as i">
+    <p [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{ 'blue': i >= limit}">{{ click }}</p>
+  </div>
+</div>
+  </div>
 </div>
