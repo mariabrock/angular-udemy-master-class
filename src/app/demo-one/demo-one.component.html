@@ -8,12 +8,13 @@
       </div>
       <div class="d-flex align-items-start flex-column mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password">
+        <input [(ngModel)]="password" type="password" class="form-control" id="password">
       </div>
       <div class="d-flex flex-row gap-3 mb-3">
         <!--event trigger-->
+        <!--          figure out why pw doesn't work here-->
         <button
-          [disabled]="username == ''"
+          [disabled]="username == '' || password == ''"
           (click)="onCreateUser()"
           type="submit" class="btn btn-primary">Submit</button>
         <button
@@ -24,7 +25,7 @@
 
   </div>
 <!--string interpolation-->
-  {{ username}}
+  {{ username }}
   <br>
   {{ userCreationStatus }}
 </div>

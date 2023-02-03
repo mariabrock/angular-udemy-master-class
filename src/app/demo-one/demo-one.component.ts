@@ -8,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class DemoOneComponent implements OnInit {
 
   username: string = '';
+  password: string = '';
   createUser: boolean = false;
   userCreationStatus: string = 'No user was created!';
   users: any = [];
   details: boolean = false;
   clickCount = 0 ;
-  clicks: Array<any> = [];
+  clicks: Array<number> = [];
   limit = 4;
 
   constructor() { }
@@ -29,6 +30,7 @@ export class DemoOneComponent implements OnInit {
 
   onReset() {
     this.username = '';
+    this.password = '';
     this.userCreationStatus = 'No user was created!';
   }
 
@@ -36,12 +38,12 @@ export class DemoOneComponent implements OnInit {
     this.details = !this.details;
     this.clickCount++;
     this.clicks.push(this.clickCount);
-    console.log(this.clicks); //here I've gotten the array with all numbers to print out in console
+    console.log(this.clicks); // here I've gotten the array with all numbers to print out in console
   }
 
   getColor(i: number):  string {
     const index = this.clicks;
-    console.log(index.length-1); //here I have printed out the index of each number
+    console.log(index.length-1); // here I have printed out the index of each number
     if(i >= this.limit) {
       return 'steelblue';
     }else{
