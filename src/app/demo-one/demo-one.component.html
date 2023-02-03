@@ -49,7 +49,7 @@
     <!--structural directive similar to a for/of loop-->
       <div *ngFor="let click of clicks; index as i">
     <!--    attribute directives to dynamically change one single element-->
-        <p [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{ 'blue': i >= limit}">{{ click }}</p>
+        <p [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{ 'white-text': i >= limit}">{{ click }}</p>
       </div>
     </div>
   </div>
