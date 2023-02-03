@@ -1,0 +1,56 @@
+<div class="card w-75 mx-auto">
+  <div class="card-body gap-3">
+    <div>
+      <div class="d-flex align-items-start flex-column mb-3">
+        <label for="username" class="form-label">Username</label>
+        <!--        two-way data binding-->
+        <input [(ngModel)]="username" type="text" class="form-control" id="username">
+      </div>
+      <div class="d-flex align-items-start flex-column mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input [(ngModel)]="password" type="password" class="form-control" id="password">
+      </div>
+      <div class="d-flex flex-row gap-3 mb-3">
+        <!--event trigger-->
+        <!--          figure out why pw doesn't work here-->
+        <button
+          [disabled]="username == '' || password == ''"
+          (click)="onCreateUser()"
+          type="submit" class="btn btn-primary">Submit</button>
+        <button
+        class="btn btn-warning"
+        (click)="onReset()">Reset</button>
+      </div>
+    </div>
+
+  </div>
+<!--string interpolation-->
+  {{ username }}
+  <br>
+  {{ userCreationStatus }}
+</div>
+
+<div>
+  <div class="card w-75 mx-auto">
+    <div class="card-body gap-3">
+      <button
+        class="btn btn-secondary"
+        (click)="toggle(clickCount)">Display Details</button>
+    <!--      structural directive similar to an "if, else" statement-->
+      <div *ngIf="details">
+        <p>
+          Sensors indicate human life forms 30 meters below the planet's surface.
+          Stellar flares are increasing in magnitude and frequency. Set course for Rhomboid Dronegar 006, warp seven.
+          There's no evidence of an advanced communication network. Total guidance system failure, with less than 24 hours'
+          reserve power. Shield effectiveness has been reduced 12 percent. We have covered the area in a spherical pattern
+          which a ship without warp drive could cross in the given time.
+        </p>
+      </div>
+    <!--structural directive similar to a for/of loop-->
+      <div *ngFor="let click of clicks; index as i">
+    <!--    attribute directives to dynamically change one single element-->
+        <p [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{ 'white-text': i >= limit}">{{ click }}</p>
+      </div>
+    </div>
+  </div>
+</div>

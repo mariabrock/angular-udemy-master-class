@@ -18,6 +18,39 @@
   [disabled]="!allowNewServer"
 (click)="onCreateServer()">Add Server</button>
 <!--<p>{{ allowNewServer }}</p>-->
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
+<!--<p>{{ serverCreationStatus }}</p>-->
+<p *ngIf="serverCreated; else noServer">Server was created! Server name is {{ serverName }}</p>
+<ng-template #noServer>
+  <p>No server created!</p>
+</ng-template>
+<hr>
+
+<!--      third assignment-->
+<!--<ol>-->
+<!--  <li>Add A button which says 'Display Details'</li>-->
+<!--  <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>-->
+<!--  <li>Toggle the displaying of that paragraph with the button created in the first step</li>-->
+<!--  <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>-->
+<!--  <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>-->
+<!--</ol>-->
+
+<button
+  class="btn btn-secondary"
+  (click)="toggle(clickCount)">Display Details</button>
+<div *ngIf="details">
+  <p>
+    Sensors indicate human life forms 30 meters below the planet's surface.
+    Stellar flares are increasing in magnitude and frequency. Set course for Rhomboid Dronegar 006, warp seven.
+    There's no evidence of an advanced communication network. Total guidance system failure, with less than 24 hours'
+    reserve power. Shield effectiveness has been reduced 12 percent. We have covered the area in a spherical pattern
+    which a ship without warp drive could cross in the given time.
+  </p>
+</div>
+
+<div *ngFor="let click of clicks; index as i">
+  <p [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{ 'blue': i >= limit}">{{ click }}</p>
+</div>
+<hr>
+
+<app-server *ngFor="let server of servers"></app-server>
 
