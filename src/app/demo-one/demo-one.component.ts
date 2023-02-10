@@ -14,7 +14,7 @@ export class DemoOneComponent implements OnInit {
   users: any = [];
   details: boolean = false;
   clickCount = 0 ;
-  clicks: Array<number> = [];
+  clicks: Array<any> = [];
   limit = 4;
 
   constructor() { }
@@ -37,7 +37,8 @@ export class DemoOneComponent implements OnInit {
   toggle(clickCount) {
     this.details = !this.details;
     this.clickCount++;
-    this.clicks.push(this.clickCount);
+    // this.clicks.push(this.clickCount);
+    this.clicks.push(new Date());
     console.log(this.clicks); // here I've gotten the array with all numbers to print out in console
   }
 
